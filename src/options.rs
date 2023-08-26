@@ -141,6 +141,13 @@ fn app() -> clap::Command<'static> {
                 .required(false),
         )
         .arg(
+            // Dummy 'unified' flag of POSIX/GNU diff utility for svn support:
+            // This takes no effect.
+            Arg::new("nop_unified")
+                .short('u')
+                .hide(true)
+        )
+        .arg(
             Arg::new("label").short('L')
                 .long("label")
                 .takes_value(true)
